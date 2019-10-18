@@ -25,13 +25,41 @@ TODO: Add long description of the pod here.
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'ThiyagarajanShivSankaran' => 'thiyagarajan@nobel-systems.com' }
-  s.source           = { :git => 'https://github.com/ThiyagarajanShivSankaran/NobelDeepStreamIOS.git', :tag => s.version.to_s }
+#  s.source           = { :git => 'https://github.com/ThiyagarajanShivSankaran/NobelDeepStreamIOS.git', :tag => s.version.to_s }
+  s.source           = { :http => 'https://geoviewermobiledata.s3.amazonaws.com/DeepStreamIOS-0.1.0.zip' }
+
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'NobelDeepStreamIOS/Classes/**/*'
+#  s.source_files = 'NobelDeepStreamIOS/Classes/**/*'
+
+  s.public_header_files       = 'src/DeepstreamIO.h'
+  s.source_files              = 'src/DeepstreamIO.h'
+  s.preserve_paths            = '{j2objc,src}/**/*.{h,m,a}'
+  s.libraries                 = 'jre_emul', 'z'
   
+  s.ios.vendored_libraries      = 'lib/iosRelease/libdeepstream.io-client-java-j2objc.a'
+  s.watchos.vendored_libraries  = 'lib/iosRelease/libdeepstream.io-client-java-j2objc.a'
+  s.osx.vendored_libraries      = 'lib/x86_64Release/libdeepstream.io-client-java-j2objc.a'
+  
+  s.xcconfig = {
+    'HEADER_SEARCH_PATHS'  => '${PODS_ROOT}/NobelDeepStreamIOS/j2objc/include ${PODS_ROOT}/NobelDeepStreamIOS/src/main/objc'
+  }
+  s.ios.xcconfig = {
+    'LIBRARY_SEARCH_PATHS' => '${PODS_ROOT}/NobelDeepStreamIOS/j2objc/lib'
+  }
+  s.osx.xcconfig = {
+    'LIBRARY_SEARCH_PATHS' => '${PODS_ROOT}/NobelDeepStreamIOS/j2objc/lib/macosx'
+  }
+  
+  s.ios.deployment_target     = '8.3'
+  s.osx.deployment_target     = '10.11'
+  s.osx.frameworks            = 'ExceptionHandling'
+  s.pod_target_xcconfig       = { 'SWIFT_VERSION' => '3.0' }
+  s.resources                 = 'swift/*.swift'
+  s.dependency                'Starscream', '~> 3.0.2'
+
   # s.resource_bundles = {
   #   'NobelDeepStreamIOS' => ['NobelDeepStreamIOS/Assets/*.png']
   # }
