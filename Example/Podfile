@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'NobelDeepStreamIOS_Example' do
+  pod 'NobelDeepStreamIOS', :path => '../'
+
+  target 'NobelDeepStreamIOS_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
