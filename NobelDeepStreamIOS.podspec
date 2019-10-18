@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'NobelDeepStreamIOS'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of NobelDeepStreamIOS.'
+  s.summary          = 'This is a Nobel Systems project which is used in our IOT tool, tried our first cocopod '
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?

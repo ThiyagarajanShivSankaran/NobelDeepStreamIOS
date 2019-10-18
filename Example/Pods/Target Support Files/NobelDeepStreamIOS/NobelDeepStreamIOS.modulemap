@@ -1,0 +1,6 @@
+framework module NobelDeepStreamIOS {
+  umbrella header "NobelDeepStreamIOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

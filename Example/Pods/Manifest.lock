@@ -1,0 +1,16 @@
+PODS:
+  - NobelDeepStreamIOS (0.1.0)
+
+DEPENDENCIES:
+  - NobelDeepStreamIOS (from `../`)
+
+EXTERNAL SOURCES:
+  NobelDeepStreamIOS:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  NobelDeepStreamIOS: e473bddc26e6220648466c6ffbff9ef2c76a691a
+
+PODFILE CHECKSUM: 634c9ecdf42bf714a6e405cb8384cc08dcfc1d08
+
+COCOAPODS: 1.8.4
